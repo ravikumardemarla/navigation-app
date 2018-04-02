@@ -26,9 +26,9 @@ describe('TransposedComponent', () => {
   });
 
   it(`should be check transposed`, () => {
-    expect(component.formInfo.get('sample').invalid).toBeTruthy();
-    component.formInfo.get('sample').setValue('abc\ndef');
+    expect(component.formInfo.get('input').invalid).toBeTruthy();
+    component.formInfo.get('input').setValue('abc\ndef');
     component.transpose();
-    expect(component.formInfo.get('result').value).toEqual('cba\nfed');
+    expect(component.formInfo.get('output').value).toEqual('cba\nfed');
   });
 });

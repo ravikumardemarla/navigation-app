@@ -13,26 +13,26 @@ export class TransposedComponent implements OnInit {
   }
 
   ngOnInit() {
+    // Init formInfo
     this.formInfo = this.fb.group({
-      sample: ['', [Validators.required]],
-      result: ['']
+      input: ['', [Validators.required]],
+      output: ['']
     });
   }
 
   /**
-   * given string it should in reverse order
-   * ex: DBS
+   * @name transpose
+   * @description reverse the order of value in each line of sample form input
+   * Ex Input : DBS
    * INFO
-   * expected O/P is
-   * SBD
+   * Ex Output: SBD
    * OFNI
    */
   public transpose(): void {
     if (this.formInfo.valid) {
-      const givenStr = this.formInfo.get('sample').value;
-      const strArr = givenStr.split('\n');
+      const INPUT: string[] = this.formInfo.get('input').value.split('\n');
       let resultStr = '';
-      strArr.forEach((str, i) => {
+      INPUT.forEach((str, i) => {
         console.log('Str getting is   ', str);
         if (i === 0) {
           resultStr += str.split('').reverse().join('');
@@ -40,7 +40,7 @@ export class TransposedComponent implements OnInit {
           resultStr += '\n' + str.split('').reverse().join('');
         }
       });
-      this.formInfo.get('result').setValue(resultStr);
+      this.formInfo.get('output').setValue(resultStr);
     }
   }
 }

@@ -1,0 +1,23 @@
+.container {
+  padding-top: 120px;
+  padding-left: 200px;
+}
+
+.txt-area {
+  width: 200px;
+  height: 200px;
+}
+
+.sub-container {
+  display: flex;
+  flex-flow: row;
+}
+
+.sub-container button {
+  height: 25px;
+  margin-left: 25px;
+}
+
+.result-container {
+  padding-top: 20px;
+}

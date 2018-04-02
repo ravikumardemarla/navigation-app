@@ -1,0 +1,10 @@
+<div class="container" [formGroup]="formInfo">
+  <div class="sub-container">
+    <textarea class="txt-area" placeholder="enter input value here" formControlName="sample"></textarea>
+    <button class="btn" (click)="transpose()">Transpose</button>
+  </div>
+  <div class="result-container">
+    <textarea class="txt-area" placeholder="result output" formControlName="result"></textarea>
+  </div>
+</div>
+
